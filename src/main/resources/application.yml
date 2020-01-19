@@ -1,0 +1,36 @@
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:com.czy.mapper/*Mapper.xml
+  type-aliases-package: com.czy.project.pojo
+pagehelper:
+  helperDialect: mysql
+  params: count=countSql
+  reasonable: true
+  supportMethodsArguments: true
+server:
+  port: 8888
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/booksys?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+  freemarker:
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    suffix: .html
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF/**
+      
